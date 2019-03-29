@@ -17,7 +17,7 @@ for i in range(img0.size[1]):
         value=mydict[int(pixels0[i,j]/255*8+pixels0[i,j]/255*4+pixels0[i,j]/255*2+pixels0[i,j]/255)]
         for pix in value:
             p=int(pix)
-            pixels[i+(i*2)%4,j+(i*2)//4]=p*255
+            pixels[j+(i*2)%4,i+(i*2)//4]=p*255
             # print(p*255)
         
 
