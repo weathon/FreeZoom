@@ -12,13 +12,16 @@ pixels0 = img0.load() # create the pixel map
 pixels = img.load()
 
 
-for i in range(img0.size[1]): 
-    for j in range(img0.size[0]):
+for i in range(img0.size[1]-1): 
+    for j in range(img0.size[0]-1):
         value=mydict[int(pixels0[i,j]/255*8+pixels0[i,j]/255*4+pixels0[i,j]/255*2+pixels0[i,j]/255)]
+        myindex=0
         for pix in value:
             p=int(pix)
-            pixels[j+(i*2)%4,i+(i*2)//4]=p*255
+            # print([(i-1)*2+myindex%4,(j-1)*2+myindex//4])
+            pixels[(i)*2+myindex%4,(j)*2+myindex//4]=p*255
             # print(p*255)
+            myindex+=1
         
 
 img.show()
